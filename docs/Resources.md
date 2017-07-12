@@ -4,4 +4,4 @@
 
 * [Instructions for DotNet Core on Linux](https://www.microsoft.com/net/core#linuxubuntu)
 
-* [Default Test Link](http://localhost:5000/api/values)
+* [Default Test Link](http://localhost:5000/api/samples)
