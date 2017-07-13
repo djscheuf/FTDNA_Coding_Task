@@ -5,6 +5,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 using System.Net;
+using System.IO;
+using System;
 
 namespace Server.Controllers
 {
@@ -12,36 +14,32 @@ namespace Server.Controllers
     public class SamplesController : Controller
     {
         private readonly MemoryDatabaseContext _context;
-        private List<CompleteSampleView> _cache;
+        private List<CompleteSampleView> _cache = new List<CompleteSampleView>();
 
         public SamplesController(MemoryDatabaseContext context)
         {
             _context = context;
 
             //Load from Files?
+            if(_context.Samples.Count() == 0)
+            {
+                context.LoadStatuses(System.IO.File.ReadAllLines("./Data/Statuses.txt"));
+                context.LoadUsers(System.IO.File.ReadAllLines("./Data/Users.txt"));
+                context.LoadSamples(System.IO.File.ReadAllLines("./Data/Samples.txt"));
+            }
         }
         
         [HttpGet]
         public IEnumerable<CompleteSampleView> Get()
         {
-            if (!(_cache.Count == 0))
-                return _cache;
-
             // Requirement #1 Output all Samples, their Status, and User that created them
-            var result =
-                from s in _context.Samples
-                join u in _context.Users on s.CreatedBy equals u.Id
-                join st in _context.Statuses on s.StatusId equals st.Id
-                select new CompleteSampleView(s, st, u);
-
-            // Should buy some performance... and reduces DB calls.
-            _cache = result.ToList();
+            var result =_context.GetFullSampleView();
 
             // This gives us a nice complete view of the Sample in a more human read-able fashion.
             return result;
         }
 
-        [HttpGet("{sampleId}", Name = "GetById")]
+        [HttpGet("GetById/{sampleId}", Name = "GetById")]
         public CompleteSampleView GetById(int sampleId)
         {
             if(sampleId < 0)
@@ -52,7 +50,7 @@ namespace Server.Controllers
             return result;
         }
 
-        [HttpGet("{desiredStatusId}", Name = "GetByStatus")]
+        [HttpGet("GetByStatus/{desiredStatusId}", Name = "GetByStatus")]
         public IEnumerable<CompleteSampleView> GetByStatus(int desiredStatusId)
         {
             // Requirement #2 Output all Samples with a given status
@@ -63,7 +61,7 @@ namespace Server.Controllers
             return result;
         }
 
-        [HttpGet("{user}", Name = "GetByPartialUser")]
+        [HttpGet("GetByUser/{user}", Name = "GetByPartialUser")]
         public IEnumerable<CompleteSampleView> GetByPartialUser(string user)
         {
             // Requirement #3 Output all Samples whose usersnames contain a given string
@@ -96,12 +94,10 @@ namespace Server.Controllers
                 return new HttpResponseMessage(HttpStatusCode.NotFound)
                     {ReasonPhrase = "Unrecognized Status."};
 
-            _cache.Clear();
             _context.Samples.Add(item);
             _context.SaveChanges();
 
             return new HttpResponseMessage(HttpStatusCode.OK);
-            
         }
     }
 }

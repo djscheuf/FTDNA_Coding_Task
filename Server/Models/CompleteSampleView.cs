@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace Server.Models
 {
@@ -51,5 +52,21 @@ namespace Server.Models
        
         private string _status;
         public string Status {get{return _status;}}
+
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+            result.AppendLine($"Sample: {SampleId}");
+            result.AppendLine($"    Barcode:   {Barcode}");
+            result.AppendLine($"    CreatedAt: {CreatedAt}");
+            result.AppendLine($"    CreatedAt: {CreatedAt}");
+            result.AppendLine($"    CreatedBy: {CreatedBy}");
+            result.AppendLine($"        FirstName: {FirstName}");
+            result.AppendLine($"        LastName:  {LastName} ");
+            result.AppendLine($"    Status:    {StatusId} ");
+            result.AppendLine($"        Title:     {Status} ");
+
+            return result.ToString();
+        }
     }
 }

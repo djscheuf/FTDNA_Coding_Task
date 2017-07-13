@@ -68,3 +68,8 @@ The Server-side models basically are given in the assignment:
     * It allows for the desired level of filtering and information presentaion.
     * Further, it can be cached to improve query performance, since all desired information is present.
     * However, since it is a bigger model, Cache invalidation and re-initialization is rather expensive compared to just the list of samples.
+    
+####Keys
+Since the objects for this project are not stored in a database, and instead are loaded from files, I have elecected to turn off the Key Generation feature. This allows the ids specified in the files to be maintained.
+
+Where this project to be moved ontop of aan actual database, I would recommend turning key generation back on, and would adjust the data loading functionality.
