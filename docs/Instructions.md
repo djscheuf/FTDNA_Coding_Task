@@ -25,7 +25,7 @@ Once the application is running, you will be able to run the get tests will ease
     * You will see all samples whose statusId is 1 or Accessioning(sp?)
 
 ## Client Tests
-Please see the included screenshots in docs/screenshots. They will show you what you should see.
+Please see the included screenshots in docs/screenshots. They will show you what you should see. To start the client, you should just need to load the index.html under client in your prefered web-browser. I personally used Firefox.
 1. Please click Retrieve Data
     * You will see the 100 initial samples
 2. Please Filter by Status 'Acc' and User 'Kim'
