@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'djs-app',
     template: `
     <div><h1>{{pageTitle}}</h1>
-        Hello, World!
+        <djs-samples>Loading Sample Data...</djs-samples>
     </div>
     `
 })

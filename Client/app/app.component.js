@@ -14,7 +14,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'djs-app',
-            template: "\n    <div><h1>{{pageTitle}}</h1>\n        Hello, World!\n    </div>\n    "
+            template: "\n    <div><h1>{{pageTitle}}</h1>\n        <djs-samples>Loading Sample Data...</djs-samples>\n    </div>\n    "
         })
     ], AppComponent);
     return AppComponent;

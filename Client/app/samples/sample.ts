@@ -4,7 +4,7 @@ export interface ISample {
     //      property names conform to JSON standard :)
     sampleId: number;
     barcode: string;
-    createdAt: Date;
+    createdAt: string;
     createdBy: number;
     firstName: string;
     lastName: string;

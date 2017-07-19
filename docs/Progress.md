@@ -21,4 +21,13 @@
 ## 18JUN2017 - Start on Client
 * I've studies Angular yesterday and today. 
 * I have taken an example project which was setup for type script and module loading and stripped it down
-* With the stripped down project I'vebegun creating my own angular agg.
+* With the stripped down project I've begun creating my own angular app.
+* End of Nigth, I am unable to get the full app working, something about the samples component isn't loading. (Plus I am down with a stomach flu...)
+
+## 19JUN2017 - Resume work on Client
+* I fixed the issue with the samples component. My reference to the template URL was bad.
+* I've fixed some display issues, and verify with local data that the filters work.
+* I am still working on loading remote data.
+    * Turns out that I needed to include the http part of the URL
+    * Also it turns out that the browser is protecting against CrossSite JSON... Need to make the server allow that in the headers.
+    

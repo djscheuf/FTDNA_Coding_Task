@@ -11,6 +11,7 @@ using System;
 namespace Server.Controllers
 {
     [Route("api/[controller]")]
+    [AllowCrossSiteJson]
     public class SamplesController : Controller
     {
         private readonly MemoryDatabaseContext _context;

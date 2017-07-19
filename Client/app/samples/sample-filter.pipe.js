@@ -15,7 +15,8 @@ var SampleUserFilterPipe = (function () {
             return value;
         filterBy = filterBy.toLocaleLowerCase();
         return value.filter(function (sample) {
-            return sample.createdBy.toLocaleLowerCase().includes(filterBy);
+            return sample.firstName.toLocaleLowerCase().includes(filterBy)
+                || sample.lastName.toLocaleLowerCase().includes(filterBy);
         });
     };
     SampleUserFilterPipe = __decorate([
