@@ -1,0 +1,19 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='row' *ngIf='response'>
+            Server Response: {{ response }}
+        </div>
+        <div class='row'>
+            <button (click)='easySample()'>Use Easy Sample</button>
+            <form (submit)='submitSample()'>
+                SampleId: <input required type='text' name='sampleId' [(ngModel)]='inputSampleId'/><br/>
+                Barcode: <input required type='text' name='barcode' [(ngModel)]='inputBarcode' /><br/>
+                StatusId: <input required type='text' name='statusId' [(ngModel)]='inputStatusId' /><br/>
+                CreatedBy: <input required type='text' name='createdBy' [(ngModel)]='inputCreatedBy' /><br/>
+                CreatedAt: <input required type='text' name='createdAt' [(ngModel)]='inputCreatedAt' /><br/>
+                <input type="submit"/>
+            </form>
+        </div>

@@ -70,6 +70,45 @@ The Server-side models basically are given in the assignment:
     * However, since it is a bigger model, Cache invalidation and re-initialization is rather expensive compared to just the list of samples.
     
 ####Keys
-Since the objects for this project are not stored in a database, and instead are loaded from files, I have elecected to turn off the Key Generation feature. This allows the ids specified in the files to be maintained.
+Since the objects for this project are not stored in a database, and instead are loaded from 
+files, I have elecected to turn off the Key Generation feature. This allows the ids specified
+ in the files to be maintained.
 
-Where this project to be moved ontop of aan actual database, I would recommend turning key generation back on, and would adjust the data loading functionality.
+Where this project to be moved ontop of aan actual database, I would recommend turning key 
+generation back on, and would adjust the data loading functionality.
+
+##Client
+The client is actually very simple. All the work could be done thru a single component. 
+However in this case I thought it would be nice to create a second component to handle 
+creating new samples.
+
+###Sample-List.Component
+As per the name this handle the sample lists. Since I initially had trouble with the HTTP Get
+ call to the server, I have elected to allow for either local or remote data loading. I 
+ beleive the data loading could be done in the ngOnInit call, but I am hesitant to remove the 
+ nice-to-have of local data testing, without the http overhead.
+
+
+###SampleUserFilterPipe
+I thought about having only a single pipe and a single search box, but I realized this would 
+lead to less accurate results, and generally messy code. So I decided to split it in two. One 
+filter for Users which fed into a second for Statuses, or vice versa.
+
+After this decision was reached the pipes because simple to implement, with the only 
+additional detail being taht the User Pipe filter for a partial match in either firstName or
+ lastName in the sample.
+
+###SampleStatusFilterPipe
+This pipe is a fairly basic pipe. Give it a list of Samples and it will return the filter for
+partial matches in status. This partial matching, while potentially a performance hit, 
+allows for a kinder UX overall. And in testing it has proved to be a negligable performance 
+hit for the given data-set.
+
+###Local or Remote Data
+For testing purposes, I provided a local data option. I will likely turn this button off in 
+the final product, but it was useful for testing the pipes while the HTTP requests were buggy.
+
+Naturally the remote data is the core of this project, but required the Server to manually 
+edit it's headers to allow both Client and Server to co-operate on a single computer. This is
+ messy and a little dangerous in my opinion, but given the constraints I chose to go for 
+ working code, rather than tackle a Network issue.

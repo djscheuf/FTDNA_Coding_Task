@@ -14,6 +14,7 @@ export class SampleListComponent {
 
     constructor(private _http: Http){}
     
+    pageTitle:string="Search Samples"
     statusFilter: string="";
     userFilter:string="";
     warning:string="";
