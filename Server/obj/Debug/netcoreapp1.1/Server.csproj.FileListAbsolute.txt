@@ -1,0 +1,8 @@
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/bin/Debug/netcoreapp1.1/Server.deps.json
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/bin/Debug/netcoreapp1.1/Server.runtimeconfig.json
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/bin/Debug/netcoreapp1.1/Server.runtimeconfig.dev.json
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/bin/Debug/netcoreapp1.1/Server.dll
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/bin/Debug/netcoreapp1.1/Server.pdb
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/obj/Debug/netcoreapp1.1/Server.AssemblyInfo.cs
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/obj/Debug/netcoreapp1.1/Server.dll
+/mnt/Data/Documents/0_Repo/FTDNA_Coding_Task/Server/obj/Debug/netcoreapp1.1/Server.pdb
