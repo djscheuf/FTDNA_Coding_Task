@@ -17,3 +17,8 @@
         * Needs some tests
         * Still need to implement Data Loading...
     * New link should be 'localhost:5000/api/samples'
+
+## 18JUN2017 - Start on Client
+* I've studies Angular yesterday and today. 
+* I have taken an example project which was setup for type script and module loading and stripped it down
+* With the stripped down project I'vebegun creating my own angular agg.
