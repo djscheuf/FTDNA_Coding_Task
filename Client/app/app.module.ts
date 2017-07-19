@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { SampleListComponent }  from './samples/sample-list.component';
 import { SampleUserFilterPipe, SampleStatusFilterPipe} from './samples/sample-filter.pipe'
+import { CreateSampleComponent } from './createSample/createSample.component'
 
 @NgModule({
   imports: [ 
@@ -17,7 +18,8 @@ import { SampleUserFilterPipe, SampleStatusFilterPipe} from './samples/sample-fi
     AppComponent,
     SampleListComponent,
     SampleUserFilterPipe,
-    SampleStatusFilterPipe
+    SampleStatusFilterPipe,
+    CreateSampleComponent
   ],
   bootstrap: [ AppComponent ]
 })

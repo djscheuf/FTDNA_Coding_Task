@@ -15,6 +15,7 @@ var SampleListComponent = (function () {
     function SampleListComponent(_http) {
         this._http = _http;
         this.samplesUrl = "http://localhost:5000/api/samples";
+        this.pageTitle = "Search Samples";
         this.statusFilter = "";
         this.userFilter = "";
         this.warning = "";

@@ -13,6 +13,7 @@ var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var sample_list_component_1 = require("./samples/sample-list.component");
 var sample_filter_pipe_1 = require("./samples/sample-filter.pipe");
+var createSample_component_1 = require("./createSample/createSample.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 sample_list_component_1.SampleListComponent,
                 sample_filter_pipe_1.SampleUserFilterPipe,
-                sample_filter_pipe_1.SampleStatusFilterPipe
+                sample_filter_pipe_1.SampleStatusFilterPipe,
+                createSample_component_1.CreateSampleComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         })
